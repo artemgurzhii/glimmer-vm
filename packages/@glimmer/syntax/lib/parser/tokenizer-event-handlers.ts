@@ -401,7 +401,7 @@ export function preprocess(html: string, options: PreprocessOptions = {}): AST.T
 
   if (options && options.plugins && options.plugins.ast) {
     let length = options.plugins.ast.length;
-    for (let i = 0, l = length; i < l; i++) {
+    for (let i = 0; i < length; i++) {
       let transform = options.plugins.ast[i];
       let env: ASTPluginEnvironment = assign({}, options, { syntax }, { plugins: undefined });
 

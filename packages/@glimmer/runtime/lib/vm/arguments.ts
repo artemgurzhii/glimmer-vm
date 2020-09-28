@@ -309,12 +309,12 @@ export class NamedArgumentsImpl implements NamedArguments {
 
   merge(other: CapturedNamedArguments) {
     let keys = Object.keys(other);
+    let keysLength = keys.length;
 
-    if (keys.length > 0) {
+    if (keysLength > 0) {
       let { names, length, stack } = this;
       let newNames = names.slice();
 
-      let keysLength = keys.length;
       for (let i = 0; i < keysLength; i++) {
         let name = keys[i];
         let idx = newNames.indexOf(name);
