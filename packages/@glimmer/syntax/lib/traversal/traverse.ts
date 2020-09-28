@@ -196,8 +196,7 @@ function visitArray(
   parent: Path<AST.Node> | null,
   parentKey: string | null
 ) {
-  let length = array.length;
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < array.length; i++) {
     let node = array[i];
     let path = new Path(node, parent, parentKey);
     let result = visitNode(visitor, path);
