@@ -28,7 +28,7 @@ export function assign(obj: any) {
     let assignment = arguments[i];
     if (assignment === null || typeof assignment !== 'object') continue;
     let keys = objKeys(assignment);
-    const keyLength = keys.length;
+    let keyLength = keys.length;
     for (let j = 0; j < keyLength; j++) {
       let key = keys[j];
       obj[key] = assignment[key];

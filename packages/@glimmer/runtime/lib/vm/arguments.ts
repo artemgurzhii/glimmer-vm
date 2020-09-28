@@ -314,7 +314,7 @@ export class NamedArgumentsImpl implements NamedArguments {
       let { names, length, stack } = this;
       let newNames = names.slice();
 
-      const keysLength = keys.length;
+      let keysLength = keys.length;
       for (let i = 0; i < keysLength; i++) {
         let name = keys[i];
         let idx = newNames.indexOf(name);
