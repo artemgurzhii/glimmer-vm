@@ -2,7 +2,7 @@ import { Dict, Option, WellKnownTagName, WellKnownAttrName } from '@glimmer/inte
 
 export function processOpcodes(compiler: any, opcodes: any) {
   let length = opcodes.length;
-  for (let i = 0, l = length; i < l; i++) {
+  for (let i = 0; i < length; i++) {
     let method = opcodes[i][0];
     let params = opcodes[i][1];
     if (params) {
