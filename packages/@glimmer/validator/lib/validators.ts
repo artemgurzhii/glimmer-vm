@@ -142,7 +142,8 @@ class MonomorphicTagImpl<T extends MonomorphicTagTypes = MonomorphicTagTypes> {
 
         if (subtag !== null) {
           if (Array.isArray(subtag)) {
-            for (let i = 0; i < subtag.length; i++) {
+            let length = subtag.length;
+            for (let i = 0; i < length; i++) {
               let value = subtag[i][COMPUTE]();
               revision = Math.max(value, revision);
             }

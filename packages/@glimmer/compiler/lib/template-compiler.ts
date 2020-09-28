@@ -96,7 +96,8 @@ export default class TemplateCompiler implements Processor<InputOps> {
     let attributes = action.attributes;
     let simple = true;
 
-    for (let i = 0; i < attributes.length; i++) {
+    let length = attributes.length;
+    for (let i = 0; i < length; i++) {
       let attr = attributes[i];
       if (attr.name === '...attributes') {
         simple = false;
@@ -129,7 +130,8 @@ export default class TemplateCompiler implements Processor<InputOps> {
       // TODO: Assert no attributes
       let typeAttr: Option<AST.AttrNode> = null;
       let attrs = action.attributes;
-      for (let i = 0; i < attrs.length; i++) {
+      let attrsLength = attrs.length;
+      for (let i = 0; i < attrsLength; i++) {
         if (attrs[i].name === 'type') {
           typeAttr = attrs[i];
           continue;
@@ -141,7 +143,8 @@ export default class TemplateCompiler implements Processor<InputOps> {
         this.attribute([typeAttr], !simple || actionIsComponent, action);
       }
 
-      for (let i = 0; i < action.modifiers.length; i++) {
+      let actionModifiersLength = action.modifiers.length;
+      for (let i = 0; i < actionModifiersLength; i++) {
         this.modifier([action.modifiers[i]]);
       }
 

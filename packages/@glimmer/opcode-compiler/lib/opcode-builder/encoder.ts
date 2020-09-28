@@ -57,7 +57,8 @@ export class LabelsImpl implements Labels<InstructionEncoder> {
 
   patch(encoder: InstructionEncoder): void {
     let { targets, labels } = this;
-    for (let i = 0; i < targets.length; i++) {
+    let length = targets.length;
+    for (let i = 0; i < length; i++) {
       let { at, target } = targets[i];
       let address = labels[target] - at;
       encoder.patch(at, address);

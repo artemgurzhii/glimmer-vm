@@ -136,7 +136,8 @@ export function compileSimpleArgs(
   if (hash) {
     names = hash[0];
     let val = hash[1];
-    for (let i = 0; i < val.length; i++) {
+    let length = val.length;
+    for (let i = 0; i < length; i++) {
       out.push(op('Expr', val[i]));
     }
   }

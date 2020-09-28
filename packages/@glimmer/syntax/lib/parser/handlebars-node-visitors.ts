@@ -326,7 +326,8 @@ export abstract class HandlebarsNodeVisitors extends Parser {
   Hash(hash: HBS.Hash): AST.Hash {
     let pairs: AST.HashPair[] = [];
 
-    for (let i = 0; i < hash.pairs.length; i++) {
+    let length = hash.pairs.length;
+    for (let i = 0; i < length; i++) {
       let pair = hash.pairs[i];
       pairs.push(b.pair(pair.key, this.acceptNode(pair.value), pair.loc));
     }

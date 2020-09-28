@@ -122,7 +122,8 @@ export class ComponentBlock extends Block {
       let keys: string[] = [];
       let values: SerializedInlineBlock[] = [];
 
-      for (let i = 0; i < this.blocks.length; i++) {
+      let length = this.blocks.length;
+      for (let i = 0; i < length; i++) {
         let [key, value] = this.blocks[i];
         keys.push(key.slice(1));
         values.push(value);

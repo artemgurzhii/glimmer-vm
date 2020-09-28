@@ -249,7 +249,8 @@ export class HeapImpl implements CompileTimeHeap, RuntimeHeap {
   private patchPlaceholders() {
     let { placeholders } = this;
 
-    for (let i = 0; i < placeholders.length; i++) {
+    let length = placeholders.length;
+    for (let i = 0; i < length; i++) {
       let [address, getValue] = placeholders[i];
 
       assert(
@@ -263,7 +264,8 @@ export class HeapImpl implements CompileTimeHeap, RuntimeHeap {
   patchStdlibs(stdlib: STDLib): void {
     let { stdlibs } = this;
 
-    for (let i = 0; i < stdlibs.length; i++) {
+    let length = stdlibs.length;
+    for (let i = 0; i < length; i++) {
       let [address, { value }] = stdlibs[i];
 
       assert(

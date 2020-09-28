@@ -115,7 +115,8 @@ function visitNode<N extends AST.Node>(
   if (result === undefined) {
     let keys = visitorKeys[node.type];
 
-    for (let i = 0; i < keys.length; i++) {
+    let length = keys.length;
+    for (let i = 0; i < length; i++) {
       let key = keys[i] as VisitorKeys[N['type']] & keyof N;
       // we know if it has child keys we can widen to a ParentNode
       visitKey(visitor, handler, path, key);

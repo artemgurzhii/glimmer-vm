@@ -31,7 +31,8 @@ export function CompileArgs({
   let out: StatementCompileActions = [];
 
   let blockNames: string[] = blocks.names;
-  for (let i = 0; i < blockNames.length; i++) {
+  let length = blockNames.length;
+  for (let i = 0; i < length; i++) {
     out.push(PushYieldableBlock(blocks.get(blockNames[i])));
   }
 
@@ -52,7 +53,8 @@ export function CompileArgs({
   if (hash) {
     names = hash[0];
     let val = hash[1];
-    for (let i = 0; i < val.length; i++) {
+    let length = val.length;
+    for (let i = 0; i < length; i++) {
       out.push(op('Expr', val[i]));
     }
   }
@@ -75,7 +77,8 @@ export function CompilePositional(
 
   let actions: ExpressionCompileActions = [];
 
-  for (let i = 0; i < params.length; i++) {
+  let length = params.length;
+  for (let i = 0; i < length; i++) {
     actions.push(op('Expr', params[i]));
   }
 

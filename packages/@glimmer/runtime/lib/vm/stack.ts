@@ -140,7 +140,8 @@ export default class EvaluationStackImpl implements EvaluationStack {
   static restore(snapshot: unknown[]): EvaluationStackImpl {
     let stack = new InnerStack();
 
-    for (let i = 0; i < snapshot.length; i++) {
+    let length = snapshot.length;
+    for (let i = 0; i < length; i++) {
       let value = snapshot[i];
 
       if (typeof value === 'number' && isSmallInt(value)) {

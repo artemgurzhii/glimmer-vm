@@ -34,7 +34,8 @@ APPEND_OPCODES.add(Op.InvokePartial, (vm, { op1: _meta, op2: _symbols, op3: _eva
 
     let locals = Object.create(outerScope.getPartialMap()) as Dict<Reference>;
 
-    for (let i = 0; i < evalInfo.length; i++) {
+    let length = evalInfo.length;
+    for (let i = 0; i < length; i++) {
       let slot = evalInfo[i];
       let name = outerSymbols[slot - 1];
       let ref = outerScope.getSymbol(slot);
@@ -42,7 +43,8 @@ APPEND_OPCODES.add(Op.InvokePartial, (vm, { op1: _meta, op2: _symbols, op3: _eva
     }
 
     if (evalScope) {
-      for (let i = 0; i < partialSymbols.length; i++) {
+      const partialSymbolsLength = partialSymbols.length;
+      for (let i = 0; i < partialSymbolsLength; i++) {
         let name = partialSymbols[i];
         let symbol = i + 1;
         let value = evalScope[name];

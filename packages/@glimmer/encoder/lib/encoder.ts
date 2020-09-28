@@ -23,7 +23,8 @@ export class InstructionEncoderImpl implements InstructionEncoder {
 
     this.buffer.push(first);
 
-    for (let i = 2; i < arguments.length; i++) {
+    let length = arguments.length;
+    for (let i = 2; i < length; i++) {
       let op = arguments[i];
       if (typeof op === 'number' && op > OpcodeSize.MAX_SIZE) {
         throw new Error(`Operand over 32-bits. Got ${op}.`);

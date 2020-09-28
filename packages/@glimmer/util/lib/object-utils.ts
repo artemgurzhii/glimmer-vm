@@ -23,11 +23,13 @@ export function assign<T, U, V, W, X, Y, Z>(
 ): T & U & V & W & X & Y & Z;
 export function assign(target: any, ...args: any[]): any;
 export function assign(obj: any) {
-  for (let i = 1; i < arguments.length; i++) {
+  let length = arguments.length;
+  for (let i = 1; i < length; i++) {
     let assignment = arguments[i];
     if (assignment === null || typeof assignment !== 'object') continue;
     let keys = objKeys(assignment);
-    for (let j = 0; j < keys.length; j++) {
+    let keyLength = keys.length;
+    for (let j = 0; j < keyLength; j++) {
       let key = keys[j];
       obj[key] = assignment[key];
     }

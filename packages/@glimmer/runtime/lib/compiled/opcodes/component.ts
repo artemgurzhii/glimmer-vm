@@ -291,7 +291,8 @@ APPEND_OPCODES.add(Op.PrepareArgs, (vm, { op1: _state }) => {
   if (preparedArgs) {
     args.clear();
 
-    for (let i = 0; i < blocks.length; i++) {
+    let blocksLength = blocks.length;
+    for (let i = 0; i < blocksLength; i++) {
       let block = blocks[i];
 
       if (typeof block === 'number') {
@@ -311,7 +312,8 @@ APPEND_OPCODES.add(Op.PrepareArgs, (vm, { op1: _state }) => {
 
     let names = Object.keys(named);
 
-    for (let i = 0; i < names.length; i++) {
+    let length = names.length;
+    for (let i = 0; i < length; i++) {
       stack.pushJs(named[names[i]]);
     }
 
@@ -503,7 +505,8 @@ function mergeClasses(classes: (string | Reference)[]): string | Reference<unkno
 }
 
 function allStringClasses(classes: (string | Reference<unknown>)[]): classes is string[] {
-  for (let i = 0; i < classes.length; i++) {
+  let length = classes.length;
+  for (let i = 0; i < length; i++) {
     if (typeof classes[i] !== 'string') {
       return false;
     }
@@ -682,7 +685,8 @@ APPEND_OPCODES.add(Op.SetBlocks, (vm, { op1: _state }) => {
   let state = check(vm.fetchValue(_state), CheckFinishedComponentInstance);
   let { blocks } = check(vm.stack.peekJs(), CheckArguments);
 
-  for (let i = 0; i < blocks.names.length; i++) {
+  let length = blocks.names.length;
+  for (let i = 0; i < length; i++) {
     bindBlock(blocks.symbolNames[i], blocks.names[i], state, blocks, vm);
   }
 });

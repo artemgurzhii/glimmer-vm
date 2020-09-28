@@ -11,7 +11,8 @@ function actionsEqual(input: string, expectedActions: any[]) {
   let actualActions = templateVisitor.actions;
 
   // Remove the AST node reference from the actions to keep tests leaner
-  for (let i = 0; i < actualActions.length; i++) {
+  let length = actualActions.length;
+  for (let i = 0; i < length; i++) {
     actualActions[i][1].shift();
   }
 

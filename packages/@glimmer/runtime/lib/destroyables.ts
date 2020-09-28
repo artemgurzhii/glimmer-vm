@@ -41,7 +41,8 @@ function push<T extends object>(collection: OneOrMany<T>, newItem: T): OneOrMany
 
 function iterate<T extends object>(collection: OneOrMany<T>, fn: (item: T) => void) {
   if (Array.isArray(collection)) {
-    for (let i = 0; i < collection.length; i++) {
+    let length = collection.length;
+    for (let i = 0; i < length; i++) {
       fn(collection[i]);
     }
   } else if (collection !== null) {

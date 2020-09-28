@@ -244,7 +244,8 @@ export function childRefFor(_parentRef: Reference, path: string): Reference {
 export function childRefFromParts(root: Reference, parts: string[]): Reference {
   let reference = root;
 
-  for (let i = 0; i < parts.length; i++) {
+  let length = parts.length;
+  for (let i = 0; i < length; i++) {
     reference = childRefFor(reference, parts[i]);
   }
 

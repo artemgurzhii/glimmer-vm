@@ -72,7 +72,8 @@ export function compileStatements(
   let sCompiler = STATEMENTS;
   let context = templateCompilationContext(syntaxContext, meta);
 
-  for (let i = 0; i < statements.length; i++) {
+  let length = statements.length;
+  for (let i = 0; i < length; i++) {
     concatStatements(context, sCompiler.compile(statements[i], context.meta));
   }
 

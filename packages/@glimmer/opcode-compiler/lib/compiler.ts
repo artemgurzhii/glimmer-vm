@@ -39,7 +39,8 @@ export function compileBlock(
 export function commit(heap: CompileTimeHeap, scopeSize: number, buffer: CompilerBuffer): number {
   let handle = heap.malloc();
 
-  for (let i = 0; i < buffer.length; i++) {
+  let length = buffer.length;
+  for (let i = 0; i < length; i++) {
     let value = buffer[i];
 
     if (typeof value === 'function') {

@@ -1,7 +1,8 @@
 import { Dict, Option, WellKnownTagName, WellKnownAttrName } from '@glimmer/interfaces';
 
 export function processOpcodes(compiler: any, opcodes: any) {
-  for (let i = 0, l = opcodes.length; i < l; i++) {
+  let length = opcodes.length;
+  for (let i = 0; i < length; i++) {
     let method = opcodes[i][0];
     let params = opcodes[i][1];
     if (params) {

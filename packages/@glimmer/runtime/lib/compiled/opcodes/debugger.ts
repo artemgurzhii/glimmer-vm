@@ -34,7 +34,8 @@ class ScopeInspector {
   private locals = dict<Reference>();
 
   constructor(private scope: Scope, symbols: string[], evalInfo: number[]) {
-    for (let i = 0; i < evalInfo.length; i++) {
+    let length = evalInfo.length;
+    for (let i = 0; i < length; i++) {
       let slot = evalInfo[i];
       let name = symbols[slot - 1];
       let ref = scope.getSymbol(slot);

@@ -293,7 +293,8 @@ export class NamedArgumentsImpl implements NamedArguments {
     let { names, references } = this;
     let map = dict<Reference<unknown>>();
 
-    for (let i = 0; i < names.length; i++) {
+    let length = names.length;
+    for (let i = 0; i < length; i++) {
       let name = names[i];
 
       if (DEBUG) {
@@ -308,12 +309,13 @@ export class NamedArgumentsImpl implements NamedArguments {
 
   merge(other: CapturedNamedArguments) {
     let keys = Object.keys(other);
+    let keysLength = keys.length;
 
-    if (keys.length > 0) {
+    if (keysLength > 0) {
       let { names, length, stack } = this;
       let newNames = names.slice();
 
-      for (let i = 0; i < keys.length; i++) {
+      for (let i = 0; i < keysLength; i++) {
         let name = keys[i];
         let idx = newNames.indexOf(name);
 

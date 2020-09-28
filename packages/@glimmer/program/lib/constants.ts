@@ -32,7 +32,8 @@ export class CompileTimeConstantImpl implements CompileTimeConstants {
 
     let handles: number[] = new Array(values.length);
 
-    for (let i = 0; i < values.length; i++) {
+    let length = values.length;
+    for (let i = 0; i < length; i++) {
       handles[i] = this.value(values[i]);
     }
 
@@ -65,7 +66,8 @@ export class RuntimeConstantsImpl implements RuntimeConstants {
     let handles = this.getValue(value) as number[];
     let reified: T[] = new Array(handles.length);
 
-    for (let i = 0; i < handles.length; i++) {
+    let length = handles.length;
+    for (let i = 0; i < length; i++) {
       let n = handles[i];
       reified[i] = this.getValue(n);
     }
@@ -101,7 +103,8 @@ export class ConstantsImpl extends CompileTimeConstantImpl implements RuntimeCon
       let names: number[] = this.getValue(index);
       reified = new Array(names.length);
 
-      for (let i = 0; i < names.length; i++) {
+      let length = names.length;
+      for (let i = 0; i < length; i++) {
         reified[i] = this.getValue(names[i]);
       }
 

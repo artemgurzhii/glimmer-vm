@@ -60,7 +60,8 @@ export function namedBlocks(blocks: WireFormat.Core.Blocks, meta: ContainingMeta
 
   let [keys, values] = blocks;
 
-  for (let i = 0; i < keys.length; i++) {
+  let length = keys.length;
+  for (let i = 0; i < length; i++) {
     out[keys[i]] = compilableBlock(values[i]!, meta);
   }
 

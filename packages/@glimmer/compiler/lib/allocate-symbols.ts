@@ -31,8 +31,8 @@ export class SymbolAllocator implements Processor<AllocateSymbolsOps> {
     let out = [];
     let locations = [];
     let { ops } = this;
-
-    for (let i = 0; i < ops.length; i++) {
+    let length = ops.length;
+    for (let i = 0; i < length; i++) {
       let op = ops[i];
       let location = this.locations[i];
       let result = this.dispatch(op);

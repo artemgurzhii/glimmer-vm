@@ -411,7 +411,8 @@ export default class TemplateVisitor {
 function domIndexOf(nodes: AST.Node[], domNode: AST.TextNode | AST.ElementNode) {
   let index = -1;
 
-  for (let i = 0; i < nodes.length; i++) {
+  let length = nodes.length;
+  for (let i = 0; i < length; i++) {
     let node = nodes[i];
 
     if (node.type !== 'TextNode' && node.type !== 'ElementNode') {

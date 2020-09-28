@@ -171,7 +171,8 @@ export function populateBuiltins(
 
         let actions: StatementCompileActions = [];
 
-        for (let i = 0; i < keys.length; i++) {
+        let length = keys.length;
+        for (let i = 0; i < length; i++) {
           let key = keys[i];
           if (key === 'guid' || key === 'insertBefore') {
             actions.push(op('Expr', values[i]));
