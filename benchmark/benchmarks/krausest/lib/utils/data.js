@@ -35,7 +35,7 @@ function _random(max) {
 
 let rowId = 1;
 
-export default function buildData(count = 1000) {
+export default function buildData(count = 10000) {
   const adjectives = [
       'pretty',
       'large',

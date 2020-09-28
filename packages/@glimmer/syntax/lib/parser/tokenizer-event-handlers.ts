@@ -276,7 +276,8 @@ function assembleAttributeValue(
 }
 
 function assembleConcatenatedValue(parts: (AST.MustacheStatement | AST.TextNode)[]) {
-  for (let i = 0; i < parts.length; i++) {
+  let length = parts.length;
+  for (let i = 0; i < length; i++) {
     let part: AST.BaseNode = parts[i];
 
     if (part.type !== 'MustacheStatement' && part.type !== 'TextNode') {
@@ -399,7 +400,8 @@ export function preprocess(html: string, options: PreprocessOptions = {}): AST.T
   let program = new TokenizerEventHandlers(html, entityParser).acceptTemplate(ast);
 
   if (options && options.plugins && options.plugins.ast) {
-    for (let i = 0, l = options.plugins.ast.length; i < l; i++) {
+    let length = options.plugins.ast.length;
+    for (let i = 0, l = length; i < l; i++) {
       let transform = options.plugins.ast[i];
       let env: ASTPluginEnvironment = assign({}, options, { syntax }, { plugins: undefined });
 

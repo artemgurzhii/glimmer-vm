@@ -313,7 +313,8 @@ export class ListBlockOpcode extends BlockOpcode {
       }
     }
 
-    for (let i = 0; i < children.length; i++) {
+    let length = children.length;
+    for (let i = 0; i < length; i++) {
       let opcode = children[i];
 
       if (opcode.retained === false) {

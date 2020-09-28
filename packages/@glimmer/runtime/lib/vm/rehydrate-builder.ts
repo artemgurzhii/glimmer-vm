@@ -387,7 +387,8 @@ export class RehydrateBuilder extends NewElementBuilder implements ElementBuilde
   __flushElement(parent: SimpleElement, constructing: SimpleElement): void {
     let { unmatchedAttributes: unmatched } = this;
     if (unmatched) {
-      for (let i = 0; i < unmatched.length; i++) {
+      let length = unmatched.length;
+      for (let i = 0; i < length; i++) {
         this.constructing!.removeAttribute(unmatched[i].name);
       }
       this.unmatchedAttributes = null;
@@ -505,7 +506,8 @@ function isSameNodeType(candidate: SimpleElement, tag: string) {
 }
 
 function findByName(array: SimpleAttr[], name: string): SimpleAttr | undefined {
-  for (let i = 0; i < array.length; i++) {
+  let length = array.length;
+  for (let i = 0; i < length; i++) {
     let attr = array[i];
     if (attr.name === name) return attr;
   }

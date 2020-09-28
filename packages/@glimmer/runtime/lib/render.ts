@@ -69,7 +69,8 @@ function renderInvocation(
   vm.pushFrame();
 
   // Push blocks on to the stack, three stack values per block
-  for (let i = 0; i < 3 * blockNames.length; i++) {
+  let length = blockNames.length;
+  for (let i = 0; i < 3 * length; i++) {
     vm.stack.pushNull();
   }
 

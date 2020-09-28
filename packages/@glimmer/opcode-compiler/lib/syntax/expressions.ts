@@ -135,7 +135,8 @@ function withPath(expr: ExpressionCompileActions, path?: string[]) {
   if (path === undefined || path.length === 0) return expr;
   if (!Array.isArray(expr)) expr = [expr];
 
-  for (let i = 0; i < path.length; i++) {
+  let length = path.length;
+  for (let i = 0; i < length; i++) {
     expr.push(op(Op.GetProperty, path[i]));
   }
 

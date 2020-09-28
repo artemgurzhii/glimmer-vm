@@ -95,7 +95,8 @@ export function StaticComponentHelper(
 
     if (compilable) {
       if (hash) {
-        for (let i = 0; i < hash[0].length; i = i + 1) {
+        let length = hash[0].length;
+        for (let i = 0; i < length; i = i + 1) {
           hash[0][i] = `@${hash[0][i]}`;
         }
       }
@@ -178,7 +179,8 @@ export function InvokeStaticComponent({
 
   bindings.push({ symbol: 0, isBlock: false });
 
-  for (let i = 0; i < symbols.length; i++) {
+  let length = symbols.length;
+  for (let i = 0; i < length; i++) {
     let symbol = symbols[i];
 
     switch (symbol.charAt(0)) {

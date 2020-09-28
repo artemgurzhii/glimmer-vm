@@ -53,7 +53,8 @@ class TransactionImpl implements Transaction {
   commit() {
     let { createdComponents, createdManagers } = this;
 
-    for (let i = 0; i < createdComponents.length; i++) {
+    let createdComponentsLength = createdComponents.length;
+    for (let i = 0; i < createdComponentsLength; i++) {
       let component = createdComponents[i];
       let manager = createdManagers[i];
       manager.didCreate(component);
@@ -61,7 +62,8 @@ class TransactionImpl implements Transaction {
 
     let { updatedComponents, updatedManagers } = this;
 
-    for (let i = 0; i < updatedComponents.length; i++) {
+    const updatedComponentsLength = updatedComponents.length;
+    for (let i = 0; i < updatedComponentsLength; i++) {
       let component = updatedComponents[i];
       let manager = updatedManagers[i];
       manager.didUpdate(component);
@@ -71,7 +73,8 @@ class TransactionImpl implements Transaction {
 
     let manager: ModifierManager, modifier: unknown;
 
-    for (let i = 0; i < scheduledInstallManagers.length; i++) {
+    const scheduledInstallManagersLength = scheduledInstallManagers.length;
+    for (let i = 0; i < scheduledInstallManagersLength; i++) {
       modifier = scheduledInstallModifiers[i];
       manager = scheduledInstallManagers[i];
 
@@ -92,7 +95,8 @@ class TransactionImpl implements Transaction {
 
     let { scheduledUpdateModifierManagers, scheduledUpdateModifiers } = this;
 
-    for (let i = 0; i < scheduledUpdateModifierManagers.length; i++) {
+    const scheduledUpdateModifierManagersLength = scheduledUpdateModifierManagers.length;
+    for (let i = 0; i < scheduledUpdateModifierManagersLength; i++) {
       modifier = scheduledUpdateModifiers[i];
       manager = scheduledUpdateModifierManagers[i];
 

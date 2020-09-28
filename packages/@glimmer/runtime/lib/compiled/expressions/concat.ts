@@ -5,7 +5,8 @@ export function createConcatRef(partsRefs: Reference[]) {
   return createComputeRef(() => {
     let parts = new Array<string>();
 
-    for (let i = 0; i < partsRefs.length; i++) {
+    let length = partsRefs.length;
+    for (let i = 0; i < length; i++) {
       let value = valueForRef(partsRefs[i]) as Maybe<Dict>;
 
       if (value !== null && value !== undefined) {

@@ -1,6 +1,7 @@
 export function strip(strings: TemplateStringsArray, ...args: unknown[]) {
   let out = '';
-  for (let i = 0; i < strings.length; i++) {
+  let length = strings.length;
+  for (let i = 0; i < length; i++) {
     let string = strings[i];
     let dynamic = args[i] !== undefined ? String(args[i]) : '';
 

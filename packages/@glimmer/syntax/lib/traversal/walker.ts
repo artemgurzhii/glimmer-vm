@@ -42,25 +42,29 @@ export default class Walker {
 
 let visitors = {
   Program(walker: Walker, node: AST.Program, callback: NodeCallback<AST.Node>) {
-    for (let i = 0; i < node.body.length; i++) {
+    let length = node.body.length;
+    for (let i = 0; i < length; i++) {
       walker.visit(node.body[i], callback);
     }
   },
 
   Template(walker: Walker, node: AST.Template, callback: NodeCallback<AST.Node>) {
-    for (let i = 0; i < node.body.length; i++) {
+    let length = node.body.length;
+    for (let i = 0; i < length; i++) {
       walker.visit(node.body[i], callback);
     }
   },
 
   Block(walker: Walker, node: AST.Block, callback: NodeCallback<AST.Node>) {
-    for (let i = 0; i < node.body.length; i++) {
+    let length = node.body.length;
+    for (let i = 0; i < length; i++) {
       walker.visit(node.body[i], callback);
     }
   },
 
   ElementNode(walker: Walker, node: AST.ElementNode, callback: NodeCallback<AST.Node>) {
-    for (let i = 0; i < node.children.length; i++) {
+    let length = node.children.length;
+    for (let i = 0; i < length; i++) {
       walker.visit(node.children[i], callback);
     }
   },
